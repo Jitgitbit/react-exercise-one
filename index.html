@@ -31,6 +31,12 @@
       handleCopy = (e) => {
         console.log('Try being original for once!')
       }
+      handleChange = (e) => {
+        console.log('=====>> WHAT IS BEING WRITTEN IN INPUT:',e.target.value);
+        this.setState({
+          name: e.target.value
+        })
+      }
       render () {
         return (
           <div className="app-content">
@@ -40,7 +46,7 @@
             <button onMouseOver={this.handleMouseOver}>Hover Me</button>
             <p onCopy={this.handleCopy}>What we think, we become.</p>
             <form>
-              <input type="text"/> 
+              <input type="text" onChange={this.handleChange}/> 
               <button>Submit</button> 
             </form>
           </div>
