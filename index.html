@@ -37,6 +37,10 @@
           name: e.target.value
         })
       }
+      handleSubmit = (e) => {
+        // e.preventDefault();
+        console.log('form submitted, new name:', this.state.name)
+      }
       render () {
         return (
           <div className="app-content">
@@ -45,7 +49,8 @@
             <button onClick={this.handleClick}>Click Me</button>
             <button onMouseOver={this.handleMouseOver}>Hover Me</button>
             <p onCopy={this.handleCopy}>What we think, we become.</p>
-            <form>
+
+            <form onSubmit={this.handleSubmit}>
               <input type="text" onChange={this.handleChange}/> 
               <button>Submit</button> 
             </form>
